@@ -1,0 +1,39 @@
+---
+import CardLayout from "../../layouts/CardLayout.astro";
+
+interface Props {
+    title: string;
+    body?: string;
+}
+const { title } = Astro.props;
+---
+
+<CardLayout title={title} colSpan="md:col-span-2" rowSpan="md:row-span-1">
+    <div class=" w-full h-full flex justify-evenly items-center">
+        <button id="coralAccentButton" class="bg-custCoral size-12 rounded-full" data-theme="coral"></button>
+        <button id="blueAccentButton" class="bg-custBlue size-12 rounded-full" data-theme="blue"></button>
+        <button id="tealAccentButton" class="bg-custTeal size-12 rounded-full" data-theme="teal"></button>
+    </div>
+</CardLayout>
+
+<script>
+    function changeAccentColor(color:string) {
+        document.documentElement.setAttribute("data-theme", color);
+        localStorage.setItem("accent", color);
+    }
+
+    function applyTheme() {
+        const savedAccent = localStorage.getItem("accent") || "coral";
+        document.documentElement.setAttribute("data-theme", savedAccent);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        applyTheme();
+
+        document.getElementById('coralAccentButton')?.addEventListener('click', () => changeAccentColor('coral'));
+        document.getElementById('blueAccentButton')?.addEventListener('click', () => changeAccentColor('blue'));
+        document.getElementById('tealAccentButton')?.addEventListener('click', () => changeAccentColor('teal'));
+    });
+
+    document.addEventListener('astro:after-swap', applyTheme);
+</script>

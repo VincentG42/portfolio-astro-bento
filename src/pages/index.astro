@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AboutCard from '../components/Card/AboutCard.astro';
+import IntroCard from '../components/Card/IntroCard.astro';
+import NowCard from '../components/Card/NowCard.astro';
+import Projects from '../components/Card/Projects.astro';
+import Resume from '../components/Card/Resume.astro';
+import Colors from '../components/Card/Colors.astro';
+---
+
+<Layout title="Vincent's Portfolio" description="This is my portfolio">
+	<main class=" md:grid grid-rows-6 grid-cols-6 flex flex-col gap-2 md:h-4/5 md:w-10/12 w-11/12 ">
+		<IntroCard title="Intro" />
+		<AboutCard title="About Me" />
+		<NowCard title="now"/>
+		<Projects title="Projects" />
+		<Resume title="Resume" />
+		<Colors title="Colors" />
+
+	</main>
+</Layout>
+
+

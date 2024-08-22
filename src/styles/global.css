@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --color-accent: #FF595A;
+}
+
+[data-theme="coral"] {
+    --color-accent: #FF595A;
+}
+
+[data-theme="blue"] {
+    --color-accent: #082BCB;
+}
+
+[data-theme="teal"] {
+    --color-accent: #6ACFC7;
+}
+
