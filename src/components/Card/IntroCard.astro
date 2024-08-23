@@ -4,6 +4,12 @@ import ButtonLayout from "../../layouts/ButtonLayout.astro";
 
 import { Image } from 'astro:assets';
 import portait from '../../assets/images/portrait.png';
+import githubLight from '../../assets/icons/icons8-github-100-light.png';
+import linkedinLight from '../../assets/icons/icons8-linkedin-100-light.png';
+import mailLight from '../../assets/icons/icons8-mail-100-light.png';
+import githubDark from '../../assets/icons/icons8-github-100-dark.png';
+import linkedinDark from '../../assets/icons/icons8-linkedin-100-dark.png';
+import mailDark from '../../assets/icons/icons8-mail-100-dark.png';
 
 interface Props {
     title?: string;
@@ -19,7 +25,6 @@ const { title, class: className } = Astro.props;
     class={className}
 >
     <div class="relative h-full w-full flex justify-between items-center">
-
         <div class="flex flex-col gap-8 lg:justify-evenly items-start h-full lg:w-5/12 z-10 lg:relative">
             <h2
                 class="lg:text-5xl text-3xl text-primBlack dark:text-primWhite capitalize leading-[4rem]"
@@ -28,19 +33,29 @@ const { title, class: className } = Astro.props;
             </h2>
             <p class="text-xl text-primBlack dark:text-primWhite leading-[2rem]">I am a junior full stack developer based in Lyon, France</p>
             <div class="w-full flex justify-evenly items-center">
-                <ButtonLayout>
-                    <a href="#">Learn More</a>
+                <ButtonLayout py="py-1" px="px-6">
+                    <a href="https://www.linkedin.com/in/vincent-goyet-devjunior" target="_blank">
+                        <Image src={linkedinLight} alt="Icon 1" class="w-10 h-10 hidden dark:block" />
+                        <Image src={linkedinDark} alt="Icon 1" class="w-10 h-10 block dark:hidden" />
+                    </a>
                 </ButtonLayout>
-                <ButtonLayout>
-                    <a href="#">Learn More</a>
+                <ButtonLayout py="py-1" px="px-6">
+                    <a href="https://github.com/VincentG42" target="_blank">
+                        <Image src={githubLight} alt="Icon 2" class="w-10 h-10 hidden dark:block" />
+                        <Image src={githubDark} alt="Icon 2" class="w-10 h-10 block dark:hidden" />
+                    </a>
                 </ButtonLayout>
-                <ButtonLayout>
-                    <a href="#">Learn More</a>
+                <ButtonLayout py="py-0.5" px="px-6">
+                    <a href="mailto:goyetvincent.dev@gmail.com">
+                        <Image src={mailLight} alt="mail icon black" class="w-10 h-10 hidden dark:block" />
+                        <Image src={mailDark} alt="mail icon white" class="w-10 h-10 block dark:hidden" />
+                    </a>
                 </ButtonLayout>
             </div>
         </div>
-        <div class=" w-3/5 xl:w-5/12 h-auto lg:relative hidden lg:block transition-all duration-300 ease-in-out">
+        <div class="w-3/5 xl:w-5/12 h-auto lg:relative hidden lg:block transition-all duration-300 ease-in-out">
             <Image src={portait} alt="Vincent Goyet" class="w-full h-auto" />
         </div>
     </div>
 </CardLayout>
+
