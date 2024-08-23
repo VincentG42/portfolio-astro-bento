@@ -1,14 +1,24 @@
 ---
 import  CardLayout from '../../layouts/CardLayout.astro';
+import ButtonLayout from '../../layouts/ButtonLayout.astro';
+import CV from '../../../public/assets/CV_2024-08-06_Vincent_Goyet.pdf'
 
 interface Props {
     title: string;
     body?  : string;
+    class?: string;
+
 }
-const { title } = Astro.props;
+const { title, class: className } = Astro.props;
 
 ---
-<CardLayout title={title} colSpan='md:col-span-1' rowSpan='md:row-span-1'>
-    <h2 class="text-xl text-primBlack dark:text-primWhite">{title}</h2>
+<CardLayout title={title} colSpan='lg:col-span-1' rowSpan='lg:row-span-1' class = {className}>
+<div class="w-full h-full flex justify-center items-center">
+    <a href={CV} target="_blank">      
+        <ButtonLayout>
+            Download my resume
+        </ButtonLayout>
+    </a>
 
+</div>
 </CardLayout>

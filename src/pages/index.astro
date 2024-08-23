@@ -1,4 +1,5 @@
 ---
+import '../styles/landingCards.css';
 import Layout from '../layouts/Layout.astro';
 import AboutCard from '../components/Card/AboutCard.astro';
 import IntroCard from '../components/Card/IntroCard.astro';
@@ -9,15 +10,12 @@ import Colors from '../components/Card/Colors.astro';
 ---
 
 <Layout title="Vincent's Portfolio" description="This is my portfolio">
-	<main class=" md:grid grid-rows-6 grid-cols-6 flex flex-col gap-2 md:h-4/5 md:w-10/12 w-11/12 ">
-		<IntroCard title="Intro" />
-		<AboutCard title="About Me" />
-		<NowCard title="now"/>
-		<Projects title="Projects" />
-		<Resume title="Resume" />
-		<Colors title="Colors" />
-
-	</main>
+    <main class="lg:grid grid-rows-6 grid-cols-6 flex flex-col gap-2 lg:h-4/5 lg:w-10/12 w-11/12">
+        <IntroCard class="animate-fade-in-intro" />
+        <AboutCard title="About Me" class="animate-fade-in-about" />
+        <NowCard title="now" class="animate-fade-in-now" />
+        <Projects title="Projects" class="animate-fade-in-projects" />
+        <Resume title="Resume" class="animate-fade-in-resume" />
+        <Colors title="Colors" class="animate-fade-in-colors" />
+    </main>
 </Layout>
-
-

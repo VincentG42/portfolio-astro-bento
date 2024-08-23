@@ -4,11 +4,13 @@ import  CardLayout from '../../layouts/CardLayout.astro';
 interface Props {
     title: string;
     body?  : string;
+    class?: string;
+
 }
-const { title } = Astro.props;
+const { title, class: className } = Astro.props;
 
 ---
-<CardLayout title={title} colSpan='md:col-span-1' rowSpan='md:row-span-1'>
+<CardLayout title={title} colSpan='md:col-span-1' rowSpan='md:row-span-1' class = {className}>
     <h2 class="text-xl text-primBlack dark:text-primWhite">{title}</h2>
 
 </CardLayout>

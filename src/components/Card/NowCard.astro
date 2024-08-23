@@ -1,14 +1,22 @@
 ---
-import  CardLayout from '../../layouts/CardLayout.astro';
+import CardLayout from '../../layouts/CardLayout.astro';
 
 interface Props {
     title: string;
-    body?  : string;
+    class?: string;
 }
-const { title } = Astro.props;
-
+const { title, class: className } = Astro.props;
 ---
-<CardLayout title={title} colSpan='md:col-span-2' rowSpan='md:row-span-2'>
-    <h2 class="text-xl text-primBlack dark:text-primWhite">{title}</h2>
 
+<CardLayout title={title} colSpan='lg:col-span-2' rowSpan='lg:row-span-2' class={className}>
+    <h2 class="text-2xl font-bold text-primBlack dark:text-primWhite capitalize">{title}</h2>
+    <div class="h-full flex flex-col justify-center">
+        <p class="text-primBack dark:text-primWhite">
+            Actively looking for a junior developer post, preferably on a cooperative training course, to prepare for the title of application developer designer., feel free to 
+            <span class="tooltip-container">
+                <a id="mailTo" href="mailto:goyetvincent.dev@gmail.com" class="underline">contact me</a>
+            </span>
+        </p>
+    </div>
 </CardLayout>
+

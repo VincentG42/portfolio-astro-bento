@@ -1,14 +1,46 @@
 ---
-import  CardLayout from '../../layouts/CardLayout.astro';
+import CardLayout from "../../layouts/CardLayout.astro";
+import ButtonLayout from "../../layouts/ButtonLayout.astro";
+
+import { Image } from 'astro:assets';
+import portait from '../../assets/images/portrait.png';
 
 interface Props {
-    title: string;
-    body?  : string;
+    title?: string;
+    class?: string;
 }
-const { title } = Astro.props;
-
+const { title, class: className } = Astro.props;
 ---
-<CardLayout title={title} colSpan='md:col-span-4' rowSpan='md:row-span-4'>
-    <h2 class="text-xl text-primBlack dark:text-primWhite">{title}</h2>
 
+<CardLayout
+    title={title}
+    colSpan="lg:col-span-4"
+    rowSpan="lg:row-span-4"
+    class={className}
+>
+    <div class="relative h-full w-full flex justify-between items-center">
+
+        <div class="flex flex-col gap-8 lg:justify-evenly items-start h-full lg:w-5/12 z-10 lg:relative">
+            <h2
+                class="lg:text-5xl text-3xl text-primBlack dark:text-primWhite capitalize leading-[4rem]"
+            >
+                Hello, my name is <span class="font-extrabold hover:text-accent transition-all duration-300 ease-in-out">Vincent Goyet</span>
+            </h2>
+            <p class="text-xl text-primBlack dark:text-primWhite leading-[2rem]">I am a junior full stack developer based in Lyon, France</p>
+            <div class="w-full flex justify-evenly items-center">
+                <ButtonLayout>
+                    <a href="#">Learn More</a>
+                </ButtonLayout>
+                <ButtonLayout>
+                    <a href="#">Learn More</a>
+                </ButtonLayout>
+                <ButtonLayout>
+                    <a href="#">Learn More</a>
+                </ButtonLayout>
+            </div>
+        </div>
+        <div class=" w-3/5 xl:w-5/12 h-auto lg:relative hidden lg:block transition-all duration-300 ease-in-out">
+            <Image src={portait} alt="Vincent Goyet" class="w-full h-auto" />
+        </div>
+    </div>
 </CardLayout>

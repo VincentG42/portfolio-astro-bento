@@ -1,14 +1,23 @@
 ---
 import  CardLayout from '../../layouts/CardLayout.astro';
+import ButtonLayout from '../../layouts/ButtonLayout.astro';
 
 interface Props {
     title: string;
-    body?  : string;
+    class?: string;
 }
-const { title } = Astro.props;
+const { title, class: className } = Astro.props;
 
 ---
-<CardLayout title={title} colSpan='md:col-span-2' rowSpan='md:row-span-6'>
-    <h2 class="text-xl text-primBlack dark:text-primWhite">{title}</h2>
+<CardLayout title={title} colSpan='lg:col-span-2' rowSpan='lg:row-span-6' class = {className}>
+<div class="py-4 lg:py-8 flex flex-col gap-8 lg:gap-16 xl:gap-24 h-full">
+    <h2 class="text-2xl font-bold text-primBlack dark:text-primWhite capitalize">{title}</h2>
+    <div class=" text-primblack dark:text-primWhite flex flex-col gap-8 h-full">
+        <p>I am an optician with 18 years of experience, including 6 years on my own, who has decided to become a developer.</p>
+        <p>I trained as a web and mobile web developer at Garage 404 in Saint Etienne, including a 2-month internship at Ideagency in Limonest, and obtained my RNCP level 5 diploma in August 2024.</p>
+        <p>I learned <b>React, Symfony</b>, worked with <b>Node, Python, the OpenAi api and assistants</b>. </p>
+        <p>I'm willing to go deeper into one of these languages/frameworks or learn new ones as long as it's part of exciting projects.</p>
+    </div>
+</div>
 
 </CardLayout>
