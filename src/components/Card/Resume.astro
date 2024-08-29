@@ -2,6 +2,7 @@
 import  CardLayout from '../../layouts/CardLayout.astro';
 import ButtonLayout from '../../layouts/ButtonLayout.astro';
 import CV from '../../../public/assets/CV_2024-08-06_Vincent_Goyet.pdf'
+import SVGAway from '../SVGAway/SVGAway.astro';
 
 interface Props {
     title: string;
@@ -19,6 +20,9 @@ const { title, class: className } = Astro.props;
             Download my resume
         </ButtonLayout>
     </a>
-
 </div>
+        <div class="size-8  absolute top-2 right-2">
+            <SVGAway />
+        </div>
+
 </CardLayout>

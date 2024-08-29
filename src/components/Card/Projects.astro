@@ -1,5 +1,6 @@
 ---
 import  CardLayout from '../../layouts/CardLayout.astro';
+import SVGAway from '../SVGAway/SVGAway.astro';
 
 interface Props {
     title: string;
@@ -11,6 +12,10 @@ const { title, class: className } = Astro.props;
 
 ---
 <CardLayout title={title} colSpan='md:col-span-1' rowSpan='md:row-span-1' class = {className}>
-    <h2 class="text-xl text-primBlack dark:text-primWhite">{title}</h2>
+
+        <h2 class="text-xl text-primBlack dark:text-primWhite">{title}</h2>
+        <div class="size-8  absolute top-2 right-2">
+            <SVGAway />
+        </div>
 
 </CardLayout>
