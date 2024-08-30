@@ -23,4 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-testpage.astro
+
+testpage-DivFollowHover.astro
+testpage-caroussel.astro

@@ -1,21 +1,35 @@
 ---
-import  CardLayout from '../../layouts/CardLayout.astro';
-import SVGAway from '../SVGAway/SVGAway.astro';
+import CardLayout from "../../layouts/CardLayout.astro";
+import SVGAway from "../SVGAway/SVGAway.astro";
 
 interface Props {
     title: string;
-    body?  : string;
+    body?: string;
     class?: string;
-
 }
 const { title, class: className } = Astro.props;
-
 ---
-<CardLayout title={title} colSpan='md:col-span-1' rowSpan='md:row-span-1' class = {className}>
 
-        <h2 class="text-xl text-primBlack dark:text-primWhite">{title}</h2>
-        <div class="size-8  absolute top-2 right-2">
-            <SVGAway />
-        </div>
-
+<CardLayout
+    title={title}
+    colSpan="md:col-span-1"
+    rowSpan="md:row-span-1"
+    class={className}
+>
+    <div class="w-full h-full flex justify-center items-center">
+        <a
+            class="group text-primBlack dark:text-primWhite transition-all duration-300 ease-in-out"
+            href="./projects"
+            target="_blank"
+        >
+            <span
+                class="bg-left-bottom bg-gradient-to-r from-accent to-accent bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+            >
+                Go to my projects
+            </span>
+        </a>
+    </div>
+    <div class="size-8 absolute top-2 right-2">
+        <SVGAway />
+    </div>
 </CardLayout>

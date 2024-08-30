@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import working from "../../assets/images/image_hero.png";
+---
+
+<div
+    class="flex flex-col xl:flex-row items-center justify-center h-screen w-screen bg-primWhite dark:bg-primBlack transition-all duration-300 ease-in-out"
+>
+    <div class=" flex flex-col items-center justify-center gap-4 text-center">
+        <h2 class="text-4xl font-bold text-primBlack dark:text-primWhite">
+            Page under construction
+        </h2>
+        <p class="text-lg text-primBlack dark:text-primWhite">
+            Actually working hard to get this page up and running. Please comme
+            back soon!
+        </p>
+        <a href="./" class="text-lg text-primBlack dark:text-primWhite underline hover:underline-offset-2 transition-all duration-300 ease-in-out"> Back home</a>
+    </div>
+    <Image src={working} alt="Under construction" class="w-2/5 h-auto" />
+</div>
